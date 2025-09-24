@@ -1,0 +1,96 @@
+/* Retro, clean, elegant theme */
+:root {
+    --bg-cream: #f6f1e7;
+    --bg-parchment: #efe7db;
+    --ink: #2f2a26;
+    --muted: #6b655f;
+    --accent: #7a6a4f; /* warm bronze */
+    --btn: #4b4a3f;
+    --btn-ghost: transparent;
+    --ring: rgba(47, 42, 38, 0.12);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+    margin: 0;
+    color: var(--ink);
+    background: radial-gradient(1200px 800px at 20% 10%, var(--bg-cream), var(--bg-parchment));
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    padding: 6vh 6vw;
+    overflow: hidden;
+}
+
+.branding {
+    z-index: 2;
+}
+
+.branding h1 {
+    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-size: clamp(32px, 6vw, 64px);
+    margin: 0 0 8px 0;
+}
+
+.branding .tagline {
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+#orbs {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cta {
+    z-index: 2;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: var(--btn);
+    padding: 12px 18px;
+    border-radius: 999px;
+    box-shadow: 0 1px 0 var(--ring), 0 10px 24px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.btn:hover { transform: translateY(-1px); box-shadow: 0 1px 0 var(--ring), 0 18px 36px rgba(0,0,0,0.1); }
+.btn:active { transform: translateY(0); }
+
+.btn.ghost {
+    color: var(--ink);
+    background: var(--btn-ghost);
+    border: 1px solid rgba(47,42,38,0.2);
+}
+
+.noscript {
+    color: var(--muted);
+    font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #orbs { display: none; }
+}
+
